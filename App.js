@@ -1,3 +1,4 @@
+
 let CocoapodExample = require('react-native').NativeModules.CocoapodExample
 let {random} = CocoapodExample
 
@@ -32,8 +33,8 @@ export default class App extends React.Component {
     let {rand} = this.state;
     return (
       <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <StatusBar barStyle="light-content" />
+        <SafeAreaView style={styles.container}>
           <View style={styles.button}>
           <Button
             title="Generate Random Number"
@@ -41,7 +42,7 @@ export default class App extends React.Component {
             onPress={() => this.generateRandomNumber()}
           />
           </View>
-          <Text>{(rand) ? rand : ''}</Text>
+          <Text style={styles.text}>{(rand) ? rand : ''}</Text>
         </SafeAreaView>
       </>
     );
@@ -54,5 +55,14 @@ const styles = StyleSheet.create({
     borderWidth: 1, 
     borderRadius: 5, 
     marginVertical: 15
+  },
+  container: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    backgroundColor: '#1c1c1e'
+  },
+  text: {
+    color: '#fff'
   }
 });

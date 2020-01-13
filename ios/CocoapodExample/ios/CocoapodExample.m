@@ -22,7 +22,7 @@ RCT_EXPORT_METHOD(random:(NSUInteger)length
 }
 
 + (BOOL)requiresMainQueueSetup {
-    return YES;
+    return NO;
 }
 
 @end
